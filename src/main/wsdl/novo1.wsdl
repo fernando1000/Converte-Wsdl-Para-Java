@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.jdconsultores.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns1="urn:JDSPBCAB_Intf" name="IJDSPBCABservice" targetNamespace="http://www.jdconsultores.com.br">
+<types>
+<xs:schema xmlns="urn:JDSPBCAB_Intf" targetNamespace="urn:JDSPBCAB_Intf">
+<xs:complexType name="TAutenticacao">
+<sequence xmlns="http://www.w3.org/2001/XMLSchema">
+<xs:element name="CdLegado" type="xs:string"/>
+<xs:element name="CdUsuario" type="xs:string"/>
+<xs:element name="Senha" type="xs:string"/>
+</sequence>
+</xs:complexType>
+</xs:schema>
+</types>
+<message name="EnviaMensagem0Request">
+<part name="ISPBOrigem" type="xs:int"/>
+<part name="ISPBDestino" type="xs:int"/>
+<part name="ConteudoXML" type="xs:string"/>
+<part name="NumCabSeq" type="xs:string"/>
+</message>
+<message name="EnviaMensagem0Response">
+<part name="NumCabSeq" type="xs:string"/>
+<part name="return" type="xs:string"/>
+</message>
+<message name="EnviaMensagem0headerRequest">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<message name="EnviaMensagem0headerResponse">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<message name="RecebeMensagem1Request">
+<part name="NumCabSeq" type="xs:string"/>
+<part name="ISPBOrigem" type="xs:int"/>
+<part name="ISPBDestino" type="xs:int"/>
+<part name="NumCtrlIF" type="xs:string"/>
+<part name="CdMensagem" type="xs:string"/>
+<part name="DtHrRegistro" type="xs:string"/>
+<part name="TpRetorno" type="xs:string"/>
+<part name="ConteudoXML" type="xs:string"/>
+<part name="Numero_Mensagem" type="xs:string"/>
+</message>
+<message name="RecebeMensagem1Response">
+<part name="NumCabSeq" type="xs:string"/>
+<part name="ISPBOrigem" type="xs:int"/>
+<part name="ISPBDestino" type="xs:int"/>
+<part name="NumCtrlIF" type="xs:string"/>
+<part name="CdMensagem" type="xs:string"/>
+<part name="DtHrRegistro" type="xs:string"/>
+<part name="TpRetorno" type="xs:string"/>
+<part name="ConteudoXML" type="xs:string"/>
+<part name="Numero_Mensagem" type="xs:string"/>
+<part name="return" type="xs:string"/>
+</message>
+<message name="RecebeMensagem1headerRequest">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<message name="RecebeMensagem1headerResponse">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<message name="ConsultaMensagem2Request">
+<part name="NumCabSeq" type="xs:string"/>
+<part name="ISPBOrigem" type="xs:int"/>
+<part name="ISPBDestino" type="xs:int"/>
+<part name="NumCtrlIF" type="xs:string"/>
+<part name="CdMensagem" type="xs:string"/>
+<part name="DtHrRegistro" type="xs:string"/>
+<part name="TpRetorno" type="xs:string"/>
+<part name="ConteudoXML" type="xs:string"/>
+</message>
+<message name="ConsultaMensagem2Response">
+<part name="NumCabSeq" type="xs:string"/>
+<part name="ISPBOrigem" type="xs:int"/>
+<part name="ISPBDestino" type="xs:int"/>
+<part name="NumCtrlIF" type="xs:string"/>
+<part name="CdMensagem" type="xs:string"/>
+<part name="DtHrRegistro" type="xs:string"/>
+<part name="TpRetorno" type="xs:string"/>
+<part name="ConteudoXML" type="xs:string"/>
+<part name="return" type="xs:string"/>
+</message>
+<message name="ConsultaMensagem2headerRequest">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<message name="ConsultaMensagem2headerResponse">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<message name="ConsultaNumCtrlIF3Request">
+<part name="NumCabSeq" type="xs:string"/>
+<part name="ISPBOrigem" type="xs:int"/>
+<part name="ISPBDestino" type="xs:int"/>
+<part name="NumCtrlIF" type="xs:string"/>
+<part name="CdMensagem" type="xs:string"/>
+<part name="DtHrRegistro" type="xs:string"/>
+<part name="TpRetorno" type="xs:string"/>
+<part name="ConteudoXML" type="xs:string"/>
+</message>
+<message name="ConsultaNumCtrlIF3Response">
+<part name="NumCabSeq" type="xs:string"/>
+<part name="ISPBOrigem" type="xs:int"/>
+<part name="ISPBDestino" type="xs:int"/>
+<part name="NumCtrlIF" type="xs:string"/>
+<part name="CdMensagem" type="xs:string"/>
+<part name="DtHrRegistro" type="xs:string"/>
+<part name="TpRetorno" type="xs:string"/>
+<part name="ConteudoXML" type="xs:string"/>
+<part name="return" type="xs:string"/>
+</message>
+<message name="ConsultaNumCtrlIF3headerRequest">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<message name="ConsultaNumCtrlIF3headerResponse">
+<part name="TAutenticacao" type="ns1:TAutenticacao"/>
+</message>
+<portType name="IJDSPBCAB">
+<operation name="EnviaMensagem">
+<input message="tns:EnviaMensagem0Request"/>
+<output message="tns:EnviaMensagem0Response"/>
+</operation>
+<operation name="RecebeMensagem">
+<input message="tns:RecebeMensagem1Request"/>
+<output message="tns:RecebeMensagem1Response"/>
+</operation>
+<operation name="ConsultaMensagem">
+<input message="tns:ConsultaMensagem2Request"/>
+<output message="tns:ConsultaMensagem2Response"/>
+</operation>
+<operation name="ConsultaNumCtrlIF">
+<input message="tns:ConsultaNumCtrlIF3Request"/>
+<output message="tns:ConsultaNumCtrlIF3Response"/>
+</operation>
+</portType>
+<binding name="IJDSPBCABbinding" type="tns:IJDSPBCAB">
+<binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="EnviaMensagem">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:JDSPBCAB_Intf-IJDSPBCAB#EnviaMensagem" style="rpc"/>
+<input>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:EnviaMensagem0headerRequest" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</input>
+<output>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:EnviaMensagem0headerResponse" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</output>
+</operation>
+<operation name="RecebeMensagem">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:JDSPBCAB_Intf-IJDSPBCAB#RecebeMensagem" style="rpc"/>
+<input>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:RecebeMensagem1headerRequest" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</input>
+<output>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:RecebeMensagem1headerResponse" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</output>
+</operation>
+<operation name="ConsultaMensagem">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:JDSPBCAB_Intf-IJDSPBCAB#ConsultaMensagem" style="rpc"/>
+<input>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:ConsultaMensagem2headerRequest" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</input>
+<output>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:ConsultaMensagem2headerResponse" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</output>
+</operation>
+<operation name="ConsultaNumCtrlIF">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:JDSPBCAB_Intf-IJDSPBCAB#ConsultaNumCtrlIF" style="rpc"/>
+<input>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:ConsultaNumCtrlIF3headerRequest" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</input>
+<output>
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf-IJDSPBCAB"/>
+<header xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" message="tns:ConsultaNumCtrlIF3headerResponse" part="TAutenticacao" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:JDSPBCAB_Intf"/>
+</output>
+</operation>
+</binding>
+<service name="IJDSPBCABservice">
+<port name="IJDSPBCABPort" binding="tns:IJDSPBCABbinding">
+<address xmlns="http://schemas.xmlsoap.org/wsdl/soap/" location="http://jdspb39587424homl.jdpsti.rtm/JDInterfaceCab/WS/JDSPB_WS_IntegraLegado.dll/soap/IJDSPBCAB"/>
+</port>
+</service>
+</definitions>
